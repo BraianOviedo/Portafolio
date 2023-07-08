@@ -1,60 +1,105 @@
-/* projects.component.scss */
-
-.projects-container {
+.body{
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-}
+  align-items: center;
+  min-height: 100vh;
+  padding: 80px 0;
 
-.project {
-  width: 300px;
-  margin: 20px;
-  padding: 20px;
-  background-color: #f2f2f2;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
+  
+  .projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;
+    
+    .title{
+      position:relative;
+      top: 80px;
+      margin-bottom: 40px;
+      font-size: 3em;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+    }
+    .project {
+      width: 300px;
+      height: 450px;
+      margin: 20px;
+      background: var(--clr);
+      border-radius: 50px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      border: 8px solid var(--violet);
+      
+      .project-image {
+        width: 100%;
+        height: auto;
+        border-top-right-radius: 50px;
+        border-top-left-radius: 50px;
+        border-bottom: 5px solid var(--violet);
+      }
+      
+      .project-details {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
 
-.project:hover {
-  transform: scale(1.05);
-}
-
-.project-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.project-details {
-  margin-top: 10px;
-}
-
-.project-name {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-}
-
-.project-description {
-  font-size: 14px;
-  color: #666;
-}
-
-.project-technologies {
-  font-size: 12px;
-  color: #999;
-  margin-top: 5px;
-}
-
-.project-link {
-  display: inline-block;
-  font-size: 14px;
-  color: #007bff;
-  margin-top: 10px;
-  text-decoration: none;
-}
-
-.project-link:hover {
-  text-decoration: underline;
+        
+        .project-name {
+          margin-top: 10px;
+          font-size: 2em;
+          font-weight: 700;
+          color: #fff;
+        }
+        
+        .project-description {
+          font-size: 1.35em;
+          color: #fff;
+          margin-top: 15px;
+        }
+      
+        .project-technologies {
+          font-size: 1em;
+          color: #fff;
+          opacity: 0.75;
+          margin-top: 15px;
+        }
+        
+        a{
+          margin-top: 20px;
+          background: var(--violet);
+          display: inline-block;
+          padding: 10px 25px;
+          text-decoration: none;
+          color: #333;
+          text-transform: uppercase;
+          text-align: center;
+          font-weight: 600;
+          border-radius: 30px;
+          transition: .5s;
+          
+          &:hover{
+            letter-spacing: 0.2em;
+          }
+        }
+    }
+      
+    }
+    
+    @media (min-width: 768px){
+        .title{
+          position:absolute;
+          top: 80px;
+          // margin-bottom: 40px;
+          font-size: 3em;
+          font-weight: 700;
+          color: var(--violet);
+          text-align: center;
+        }
+    }
+  }
 }

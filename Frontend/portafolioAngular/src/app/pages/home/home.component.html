@@ -1,24 +1,19 @@
-<!-- src/app/pages/home/home.component.html -->
-
 <div class="home-container">
-    <h1 class="home-title">Welcome to my Portfolio</h1>
-    <p class="home-description">
-      Hi there! I'm Braian Maxmiliano Oviedo, a passionate web developer.
-      <br>
-      Here you'll find information about me and the services I offer.
-    </p>
-    <div class="home-services">
-      <h2 class="home-services-title">Services</h2>
-      <div class="home-services-list">
-        <!-- Display services dynamically from backend API -->
-        <div class="home-service" *ngFor="let service of services">
-          <div class="service-icon">
-            <i class="{{ service.icon }}"></i>
-          </div>
-          <h3 class="service-title">{{ service.title }}</h3>
-          <p class="service-description">{{ service.description }}</p>
+  <h1 class="home-title">Welcome to my Portfolio</h1>
+  
+  <p>Hi there! I'm Braian Maxmiliano Oviedo, a passionate web developer.</p>
+  <p>Here you'll find information about me and the services I offer.</p>
+
+  <div class="home-services">
+    <h2 class="home-services-title">Services</h2>
+    <div class="home-services-list">
+      <div class="home-service" *ngFor="let service of services">
+        <div class="service-icon">
+          <i class="{{ service.icon }}"></i>
         </div>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
       </div>
     </div>
   </div>
-  
+</div>

@@ -1,44 +1,44 @@
 <div class="menuToggle" [class.active]="enableToggle" (click)="activeToggle()"></div>
 <nav class="sidebar" [class.active]="enableToggle">
     <ul>
-        <li class="logo" style="--bg:#333;">
+        <li class="logo" >
             <a routerLink="/">
                 <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
                 <div class="text">Portfolio</div>
             </a>
         </li>
         <div class="menu-list">
-            <li style="--bg:#e91e63;" class="active">
+            <li #menuItem>
                 <a routerLink="/">
                     <div class="icon"><i class="fa-solid fa-house"></i></div>
                     <div class="text">Home</div>
                 </a>
             </li>
-            <li style="--bg:#ffa117;">
+            <li #menuItem>
                 <a routerLink="/projects">
                     <div class="icon"><i class="fa-solid fa-rocket"></i></div>
                     <div class="text">Projects</div>
                 </a>
             </li>
-            <li style="--bg:#f44336;">
+            <li #menuItem>
                 <a routerLink="/services">
                     <div class="icon"><i class="fa-solid fa-basket-shopping"></i></div>
                     <div class="text">Services</div>
                 </a>
             </li>
-            <li style="--bg:#0fc70f;">
+            <li #menuItem>
                 <a routerLink="/contact">
                     <div class="icon"><i class="fa-regular fa-comment"></i></div>
                     <div class="text">Contact</div>
                 </a>
             </li>
-            <li style="--bg:#2196f3;">
+            <li #menuItem>
                 <a routerLink="/register">
                     <div class="icon"><i class="fa-solid fa-user-plus"></i></div>
                     <div class="text">Register</div>
                 </a>
             </li>
-            <li style="--bg:#b145e9;">
+            <li #menuItem>
                 <a routerLink="/login">
                     <div class="icon"><i class="fa-solid fa-arrow-right-to-bracket"></i></div>
                     <div class="text">Login</div>
@@ -46,7 +46,7 @@
             </li>
         </div>
         <div class="bottom">
-            <li style="--bg:#333;">
+            <li >
                 <a routerLink="/account">
                     <div class="icon">
                         <div class="imgBx">
@@ -56,7 +56,7 @@
                     <div class="text">[nombre]</div>
                 </a>
             </li>
-            <li style="--bg:#333;">
+            <li >
                 <a routerLink="/">
                     <div class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
                     <div class="text">Logout</div>
