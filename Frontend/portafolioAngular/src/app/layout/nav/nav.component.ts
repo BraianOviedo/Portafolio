@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
+  enableToggle:boolean = false;
 
+
+  activeToggle(){
+    this.enableToggle = !this.enableToggle;
+  }
 }

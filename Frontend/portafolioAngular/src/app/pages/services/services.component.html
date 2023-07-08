@@ -1,1 +1,11 @@
-<p>services works!</p>
+<div class="services-container">
+  <h2 class="services-heading">Choose a Plan</h2>
+  <div class="services-list">
+    <div class="service-card" *ngFor="let service of services">
+      <h3 class="service-title">{{ service.title }}</h3>
+      <p class="service-description">{{ service.description }}</p>
+      <div class="service-price">{{ service.price }}</div>
+      <button class="service-button">Select</button>
+    </div>
+  </div>
+</div>

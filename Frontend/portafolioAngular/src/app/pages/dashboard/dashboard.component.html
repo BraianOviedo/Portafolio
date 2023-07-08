@@ -1,1 +1,27 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+    <h2>Dashboard</h2>
+    <div class="project-list">
+      <h3>Projects</h3>
+      <!-- Display a list of projects here -->
+      <div *ngFor="let project of projects">
+        <h4>{{ project.name }}</h4>
+        <p>{{ project.description }}</p>
+        <p>Technologies Used: {{ project.technologies }}</p>
+        <a href="{{ project.link }}">Visit Project</a>
+        <button (click)="editProject(project)">Edit</button>
+        <button (click)="deleteProject(project)">Delete</button>
+      </div>
+    </div>
+    <div class="service-list">
+      <h3>Services</h3>
+      <!-- Display a list of services here -->
+      <div *ngFor="let service of services">
+        <h4>{{ service.name }}</h4>
+        <p>{{ service.description }}</p>
+        <p>Price: {{ service.price }}</p>
+        <button (click)="editService(service)">Edit</button>
+        <button (click)="deleteService(service)">Delete</button>
+      </div>
+    </div>
+  </div>
+  

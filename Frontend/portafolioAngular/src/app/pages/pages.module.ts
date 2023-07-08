@@ -5,6 +5,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ServicesComponent } from './services/services.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactComponent } from './contact/contact.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,16 @@ import { ContactComponent } from './contact/contact.component';
     ContactComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  exports: [
+    HomeComponent,
+    ProjectsComponent,
+    ServicesComponent,
+    DashboardComponent,
+    ContactComponent
   ]
 })
 export class PagesModule { }

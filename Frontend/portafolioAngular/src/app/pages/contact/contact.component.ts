@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -6,5 +7,38 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
+  contactForm: FormGroup;
 
+  constructor(private fb: FormBuilder) {
+    this.contactForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', Validators.required]
+    });
+  }
+
+  get name() {
+    return this.contactForm.get('name');
+  }
+
+  get email() {
+    return this.contactForm.get('email');
+  }
+
+  get message() {
+    return this.contactForm.get('message');
+  }
+
+  onSubmit() {
+    if (this.contactForm.valid) {
+      // Send the contact form data to the server or perform any other desired action
+      console.log('Contact form submitted!');
+      console.log('Name:', this.name?.value);
+      console.log('Email:', this.email?.value);
+      console.log('Message:', this.message?.value);
+
+      // Reset the form
+      this.contactForm.reset();
+    }
+  }
 }
