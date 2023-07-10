@@ -12,6 +12,7 @@ import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 import { AccountComponent } from '../auth/account/account.component';
 import { RegisterComponent } from '../auth/register/register.component';
 import { LoginComponent } from '../auth/login/login.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     CommonModule,
+    AppRoutingModule,
     RouterModule.forRoot(appRoutes),
   ],
   exports: [
@@ -41,4 +43,5 @@ const appRoutes: Routes = [
     FooterComponent
   ]
 })
-export class LayoutModule { }
+export class LayoutModule { 
+}
