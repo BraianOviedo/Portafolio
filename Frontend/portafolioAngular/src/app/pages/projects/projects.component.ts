@@ -10,17 +10,31 @@ export class ProjectsComponent {
   projects: Project[] = [
     {
       name: 'Project 1',
-      image: './assets/website.jpg',
-      description: 'Project 1 description',
-      technologies: ['Tech 1', 'Tech 2'],
-      link: 'https://project-1-link.com'
+      image: './assets/mobile.png',
+      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab architecto voluptatum facere ut, quis inventore minima iste necessitatibus accusantium quo?',
+      technologies: ['Tech 3', 'Tech 4'],
+      link: 'https://localhost/'
     },
     {
       name: 'Project 2',
-      image: './assets/website.jpg',
-      description: 'Project 2 description',
+      image: './assets/mobile.png',
+      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab architecto voluptatum facere ut, quis inventore minima iste necessitatibus accusantium quo?',
       technologies: ['Tech 3', 'Tech 4'],
-      link: 'https://project-2-link.com'
+      link: 'https://localhost/'
+    },
+    {
+      name: 'Project 3',
+      image: './assets/mobile.png',
+      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab architecto voluptatum facere ut, quis inventore minima iste necessitatibus accusantium quo?',
+      technologies: ['Tech 3', 'Tech 4'],
+      link: 'https://localhost/'
+    },
+    {
+      name: 'Project 4',
+      image: './assets/mobile.png',
+      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab architecto voluptatum facere ut, quis inventore minima iste necessitatibus accusantium quo?',
+      technologies: ['Tech 3', 'Tech 4'],
+      link: 'https://localhost/'
     },
     // Add more projects as needed
   ];

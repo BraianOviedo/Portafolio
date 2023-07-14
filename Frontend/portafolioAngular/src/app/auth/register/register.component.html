@@ -1,31 +1,49 @@
 <div class="body">
   <div class="container">
-    <div class="form singup">
+    <form class="form singup" [formGroup]="form">
       <h2>Sing Up</h2>
       <div class="inputBox">
-        <input type="text" name="username" id="username" required>
+        <input type="text" name="username" id="username" formControlName="username" required>
         <i class="fa-regular fa-user"></i>
         <label for="username">username</label>
+        <div *ngIf="form.controls['username'].invalid && form.controls['username'].touched" class="alert alert-danger">
+            <p *ngIf="form.controls['username'].errors?.['required']">username is required.</p>
+            <p *ngIf="form.controls['username'].errors?.['minlength']">username must be at least <b>four</b> characters long</p>
+            <p *ngIf="form.controls['username'].errors?.['maxlength']">username must be less than <b>thirty</b> characters.</p>
+        </div>
       </div>
       <div class="inputBox">
-        <input type="email" name="email" id="email" required>
+        <input type="email" name="email" id="email" formControlName="email" required>
         <i class="fa-regular fa-envelope"></i>
         <label for="email">email address</label>
+        <div *ngIf="Email?.errors && Email?.touched" class="alert alert-danger">
+          <p *ngIf="Email?.hasError('required')">email is required</p>
+          <p *ngIf="Email?.hasError('email')">email must be valid</p>
+        </div>
       </div>
       <div class="inputBox">
-        <input type="password" name="password" id="password" required>
+        <input type="password" name="password" id="password" formControlName="password" required>
         <i class="fa-solid fa-lock"></i>
         <label for="password">create password</label>
+        <div *ngIf="form.controls['password'].invalid && form.controls['password'].touched" class="alert alert-danger">
+          <p *ngIf="form.controls['password'].errors?.['required']">password is required.</p>
+          <p *ngIf="form.controls['password'].errors?.['minlength']">password must be at least <b>eight</b> characters long.</p>
+        </div>
       </div>
       <div class="inputBox">
-        <input type="password" name="password2" id="password2" required>
+        <input type="password" name="password2" id="password2" formControlName="confirmPassword" required>
         <i class="fa-solid fa-lock"></i>
         <label for="password2">confirm password</label>
+        <div *ngIf="form.controls['confirmPassword'].invalid && form.controls['confirmPassword'].touched" class="alert alert-danger">
+          <p *ngIf="form.controls['confirmPassword'].errors?.['required']">confirm password is required.</p>
+          <p *ngIf="form.get('confirmPassword')?.hasError('passwordMismatch') && form.get('confirmPassword')?.touched">passwords do not match.</p>
+          <p *ngIf="form.controls['confirmPassword'].value === form.controls['password'].value && form.controls['confirmPassword'].touched">password must be identical.</p>
+        </div>
       </div>
       <div class="inputBox">
-        <input type="submit" value="Create Account">
+        <input type="submit" value="Create Account" [disabled]="form.invalid">
       </div>
       <p>Already a member? <a routerLink="/login" class="login">Log in</a></p>
-    </div>
+    </form>
   </div>
 </div>

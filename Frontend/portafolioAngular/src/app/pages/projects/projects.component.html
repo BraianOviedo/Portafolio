@@ -1,12 +1,12 @@
 <div class="body">
-  <div class="projects-container">
-    <h2 class="title">View My Projects</h2>
+  <h2 class="title">View My Projects</h2>
+  <div class="container">
     <div class="project" *ngFor="let project of projects">
       <img src="{{ project.image }}" alt="{{ project.name }}" class="project-image">
       <div class="project-details">
         <h2 class="project-name">{{ project.name }}</h2>
         <p class="project-description">{{ project.description }}</p>
-        <p class="project-technologies">Technologies: {{ project.technologies }}</p>
+        <p class="project-technologies">Stack: {{ project.technologies }}</p>
         <a href="{{ project.link }}" class="project-link">Visit Project</a>
       </div>
     </div>

@@ -1,44 +1,134 @@
-/* src/app/auth/account/account.component.scss */
+.body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 
-.account-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border-radius: 5px;
+  .container{
+    padding: 40px;
+    border-radius: 20px;
+    border: 8px solid var(--violet);
+    box-shadow: -5px -5px 15px rgba($color: #fff, $alpha: 0.1),
+    5px 5px 15px rgba($color: #b145e9, $alpha: 1.0),
+    inset -5px -5px 15px rgba($color: #fff, $alpha: 0.1),
+    inset 5px 5px 15px rgba($color: #b145e9, $alpha: 1.0);
+    
+    .form{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 25px;
+
+      h2{
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        font-size: 1.8em;
+      }
+
+      .inputBox{
+        position: relative;
+        width: 300px;
+
+        input{
+          padding: 12px 10px 12px 48px;
+          border: none;
+          width: 100%;
+          background: var(--clr);
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          color: #fff;
+          font-weight: 300;
+          border-radius: 25px;
+          font-size: 1em;
+          box-shadow: -5px -5px 15px rgba($color: #fff, $alpha: 0.1),
+          5px 5px 15px rgba($color: #b145e9, $alpha: 1.0);
+          transition: .5s;
+          outline: none;
+
+
+          &:valid ~ label,
+          &:focus ~ label{
+            color: var(--violet);
+            border: 1px solid var(--violet);
+            background: var(--clr);
+            transform: translateX(25px) translateY(-14px);
+            font-size: 0.8em;
+            padding: 0 8px;
+            border-radius: 10px;
+            letter-spacing: 0.1em;
+          }
+
+          &:valid,
+          &:focus{
+            border: 1px solid var(--violet);
+          }
+
+          &[type="submit"]{
+            background: var(--violet);
+            color: rgba($color: #ffffff, $alpha: .9);
+            padding: 10px 0;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: -5px -5px 15px rgba($color: #fff, $alpha: 0.1),
+            5px 5px 15px rgba($color: #b145e9, $alpha: 1.0),
+            inset -5px -5px 15px rgba($color: #fff, $alpha: 0.1),
+            inset 5px 5px 15px rgba($color: #b145e9, $alpha: 1.0);
+
+            &:disabled{
+              background: var(--orange);
+              box-shadow: -5px -5px 15px rgba($color: #fff, $alpha: 0.1),
+              5px 5px 15px rgba($color: #f44336, $alpha: 1.0),
+              inset -5px -5px 15px rgba($color: #fff, $alpha: 0.1),
+              inset 5px 5px 15px rgba($color: #f44336, $alpha: 1.0);
+              cursor: not-allowed;
+            }
+          }
+        }
+
+        label{
+          position: absolute;
+          top: 6px;
+          left: 0;
+          padding: 12px 10px 12px 48px;
+          pointer-events: none;
+          font-size: .9em;
+          font-weight: 300;
+          letter-spacing: 0.05em;
+          color: rgba($color: #ffffff, $alpha: .5);
+          transition: .5s;
+        }
+
+        i{
+          position: absolute;
+          top: 15px;
+          left: 16px;
+          width: 25px;
+          padding: 2px 0;
+          padding-right: 8px;
+          color: var(--violet);
+          border-right: 1px solid var(--violet);
+        }
+
+        .alert-danger{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          margin-top: 20px;
+          
+          p{
+            color: var(--orange);
+            margin-top: 10px;
+            font-weight: 300;
+            font-size: 0.7em;
+          }
+
+
+          & ~ label:invalid{
+            border: 1px solid var(--orange);
+          }
+        }
+      }
+    }
   }
-  
-  h2 {
-    color: purple;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    background-color: purple;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
+}

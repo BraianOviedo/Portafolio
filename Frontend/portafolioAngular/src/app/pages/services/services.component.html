@@ -2,15 +2,15 @@
 <div class="cover" [class.active]="activeCover"></div>
 
 <div class="body">
-
+  <div class="header">
+    <h2>Professional Web Development Services</h2>
+    <p>Take your online presence to the next level with our comprehensive web development services. Our team of experienced developers is proficient in various technologies and frameworks, ensuring that we can meet your specific requirements and deliver high-quality results. Whether you need a basic website, an e-commerce platform, or a custom web application, we have the expertise to bring your vision to life. With our attention to detail, responsive designs, and focus on user experience, we create websites and applications that engage and impress your visitors. Choose from our range of service plans tailored to meet your needs and budget. Let us handle the technical aspects while you focus on growing your business. Experience the power of a professionally developed website and elevate your online presence today.</p>
+  </div>
   <div class="container">
     <div class="card" *ngFor="let service of services">
       <div class="box">
-        <div class="icon">
-          <div class="iconBox"><i class="fa-solid fa-code"></i></div>
-        </div>
+        <h3>{{ service.title }}</h3>
         <div class="content">
-          <h3>{{ service.title }}</h3>
           <p><strong>Price:</strong> {{ service.price }}</p>
           <p><strong>Description:</strong> {{ service.description }}</p>
           <a href="#">View Details</a>
