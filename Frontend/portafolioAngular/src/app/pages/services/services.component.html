@@ -13,34 +13,25 @@
         <div class="content">
           <p><strong>Price:</strong> {{ service.price }}</p>
           <p><strong>Description:</strong> {{ service.description }}</p>
-          <a href="#">View Details</a>
+          <button (click)="showInfo(service)">View Details</button>
         </div>
       </div>
     </div>
   </div>
 
 </div>
-<!-- <div class="container">
-  <h2 class="title">Choose a Plan</h2>
-  <div class="card" *ngFor="let service of services">
-    <div class="card-header">
-      <h2>{{ service.title }}</h2>
-      <p><strong>Price:</strong> {{ service.price }}</p>
-      <p><strong>Description:</strong> {{ service.description }}</p>
-    </div>
-    <div class="card-footer">
-      <button class="view-details-btn" (click)="showInfo(service)">View Details</button>
-    </div>
-  </div>  
-</div> -->
 
 <!-- modal -->
-<!-- <div class="container-info" *ngIf="activeInfo">
+<div class="container-info" *ngIf="activeInfo">
   <span class="close" (click)="toggleInfo()">Close</span>
-  <div *ngFor="let service of services" class="info-service">
+  <div *ngFor="let service of servicesInfo" class="info-service">
     <h2>{{ service.title }}</h2>
-    <p><strong>Price:</strong> {{ service.price }}</p>
-    <p><strong>Description:</strong> {{ service.description }}</p>
+    
+    <h3>Price:</h3>
+    <p>{{ service.price }}</p>
+    
+    <h3>Description:</h3>
+    <p>{{ service.description }}</p>
   
     <h3>Deliverables:</h3>
     <ul>
@@ -51,12 +42,13 @@
     <ul>
       <li *ngFor="let item of service.stack">{{ item }}</li>
     </ul>
-  
-    <p><strong>Timeline:</strong> {{ service.timeline }}</p>
+    
+    <h3>Timeline:</h3>
+    <p>{{ service.timeline }}</p>
   
     <h3>Additional Add-ons:</h3>
     <ul>
       <li *ngFor="let addon of service.additional">{{ addon }}</li>
     </ul>  
   </div>
-</div> -->
+</div>

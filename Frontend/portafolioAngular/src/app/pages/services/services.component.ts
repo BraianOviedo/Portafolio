@@ -10,7 +10,7 @@ export class ServicesComponent {
 
   activeCover:boolean = false;
   activeInfo:boolean = false;
-  servicesInfo:Service[] = []
+  servicesInfo:Service[] = [];
 
 
   services: Service[] = [
@@ -43,32 +43,19 @@ export class ServicesComponent {
     }
   ];
 
-   // muestra la información agregando el cultivo a infoCultivo
+   // muestra la información agregando el servicio a infoServices
   showInfo(info:Service){
     this.servicesInfo.push(info);
     this.activeInfo = !this.activeInfo;
     this.activeCover = !this.activeCover;
   }
-  //Cierra la información y elimina el cultivo de infoCultivo
+  //Cierra la información y elimina el services de infoServices
   toggleInfo(){
     this.servicesInfo.splice(0);
     this.activeInfo = !this.activeInfo;
     this.activeCover = !this.activeCover;
     console.log(this.activeInfo)
   }
-
-  showModal = false;
-  selectedService: any;
-
-  openModal(service: any): void {
-    this.selectedService = service;
-    this.showModal = true;
-  }
-
-  closeModal(): void {
-    this.showModal = false;
-  }
-  
 
   // constructor(private apiService: ApiService) {}
 

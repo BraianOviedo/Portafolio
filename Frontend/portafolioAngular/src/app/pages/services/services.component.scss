@@ -86,12 +86,12 @@
             }
           }
 
-          a{
+          button{
             background: var(--violet);
             display: inline-block;
             padding: 10px 25px;
             margin-top: 40px;
-            text-decoration: none;
+            border: none;
             color: #333;
             text-transform: uppercase;
             font-weight: 600;
@@ -106,6 +106,98 @@
       }
     }
 
+  }
+}
+
+.container-info{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 90%;
+  max-width: 600px;
+  height: 80vh;
+  margin: auto;
+  background:var(--clr);
+  border-radius: 20px;
+  border: 8px solid var(--violet);
+  box-shadow: -5px -5px 15px rgba($color: #fff, $alpha: 0.1),
+  5px 5px 15px rgba($color: #b145e9, $alpha: 1.0),
+  inset -5px -5px 15px rgba($color: #fff, $alpha: 0.1),
+  inset 5px 5px 15px rgba($color: #b145e9, $alpha: 1.0);
+  z-index: 100;
+  overflow-x: scroll;
+  
+  .close{
+    position: relative;
+    top: 20px;
+    left: 10px;
+    font-size: 18px;
+    color: var(--orange);
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    border: transparent;
+    transition: .5s;
+    margin-top: 30px;
+    margin-left: 25px;
+  }
+
+  .info-service{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+
+    h2{
+      font-size: 2em;
+      font-weight: 600;
+      text-align: center;
+      color: var(--violet);
+    }
+
+    h3{
+      font-size: 1.5em;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--violet);
+
+    }
+
+    ul{
+
+      li{
+        font-size: 1em;
+        margin-top: 10px;
+        letter-spacing: 0.01em;
+      }
+    }
+    
+    p{
+      font-size: 1em;
+      margin-top: 10px;
+      letter-spacing: 0.01em;
+    }
+  }
+
+}  
+
+
+.cover{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.536);
+  z-index: 90;
+  display: none;
+  
+  &.active{
+    display: block;
+    overflow-y: hidden;
   }
 }
 
