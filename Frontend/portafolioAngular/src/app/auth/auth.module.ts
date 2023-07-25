@@ -6,6 +6,7 @@ import { AccountComponent } from './account/account.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from '../layout/layout.module';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -21,6 +22,7 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     LayoutModule,
     RouterModule,
+    HttpClientModule,
   ],
   exports: [
     RegisterComponent,

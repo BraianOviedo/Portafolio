@@ -1,19 +1,24 @@
-<div class="home-container">
-  <h1 class="home-title">Welcome to my Portfolio</h1>
-  
-  <p>Hi there! I'm Braian Maxmiliano Oviedo, a passionate web developer.</p>
-  <p>Here you'll find information about me and the services I offer.</p>
-
-  <div class="home-services">
-    <h2 class="home-services-title">Services</h2>
-    <div class="home-services-list">
-      <div class="home-service" *ngFor="let service of services">
-        <div class="service-icon">
-          <i class="{{ service.icon }}"></i>
+<div class="body">
+  <div class="header">
+    <h2>Welcome to my Portfolio!</h2>
+    <p>Hi there! I'm <strong>Braian Maximiliano Oviedo</strong>.</p> 
+    <p>As a passionate and skilled Full Stack Web Developer and Digital Applications expert, I specialize in creating dynamic and user-friendly websites and applications. With a strong foundation in HTML, CSS, and JavaScript, coupled with expertise in advanced technologies such as TypeScript, Angular, Django, MySQL Server, and WordPress, I bring a diverse range of skills to the table.</p>
+  </div>
+  <div class="skill-container">
+    <h6>Discover my diverse and comprehensive skill set, tailor-made for delivering cutting-edge web development solutions.</h6>
+  </div>
+  <h6>Here you'll find information about me and the services I offer.</h6>
+  <div class="container">
+    <div class="card" *ngFor="let service of services">
+      <div class="box">
+        <h3>{{ service.title }}</h3>
+        <div class="content">
+          <p><strong>Price:</strong> {{ service.price }}</p>
+          <p><strong>Description:</strong> {{ service.description }}</p>
+          <a routerLink="/services">View More</a>
         </div>
-        <h3 class="service-title">{{ service.title }}</h3>
-        <p class="service-description">{{ service.description }}</p>
       </div>
     </div>
   </div>
+
 </div>

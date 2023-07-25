@@ -1,65 +1,175 @@
-/* src/app/pages/home/home.component.scss */
+.body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 80px 0;
 
-.home-container {
+  .header{
+    padding: 10px 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 20px;
-    min-height: 100vh;
-  
-    .home-title {
-      font-size: 1.5em;
-      font-weight: 600;
+    align-items: center;
+    gap: 10px;
+    max-width: 85%;
+
+    h2{
+      font-size: 2em;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       color: var(--violet);
-    }
-    
-    p {
-      font-size: 1em;
-      color: #eee;
-      margin-top: 20px;
-    }
-    
-    .home-services {
-      margin-top: 40px;
-      width: 200px;
-      margin: 10px;
-      padding: 20px;
-      border-radius: 5px;
-      background-color: #f3e5f5;
       text-align: center;
-    
-      .home-services-title {
-        font-size: 24px;
-        font-weight: bold;
-        color: var(--violet);
+      margin-bottom: 30px;
+    }
+
+    p{
+      font-size: 1.1em;
+      font-weight: 300;
+      letter-spacing: 0.01em;
+      line-height: 1.3em;
+      opacity: .8;
+
+      strong{
+        color: #b145e9;
+        opacity: 1;
+        font-weight: 600;
       }
-      
-      .home-services-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 20px;
-      }
-      
-      
-      .service-icon {
-        font-size: 48px;
-        color: #4a148c;
-        margin-bottom: 10px;
-      }
-      
-      .service-title {
-        font-size: 20px;
-        font-weight: bold;
-        color: #333;
-      }
-      
-      .service-description {
-        font-size: 16px;
-        color: #777;
-      }
+    }
   }
 
+  .skill-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+    flex-wrap: wrap;
+
+    h6{
+
+    }
+
+    .card{
+      position: relative;
+      width: 200px;
+      height: 200px;
+
+      .rating{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: var(--violet);
+
+        h2{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: #fff;
+          font-size: 1.2em;
+          font-weight: 500;
+          text-align: center;
+          line-height: 1.5em;
+
+          span{
+            font-size: 2.5em;
+            font-weight: 700;
+          }
+
+          sup{
+            font-size: 1.5em;
+            font-weight: 300;
+          }
+
+        }
+
+        .block{
+          position: absolute;
+          width: 2px;
+          height: 15px;
+          background: var(--clr);
+          left: 50%;
+          transform-origin: 50% 100px;
+        }
+      }
+    }
+  }
+
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;
+
+    .card{
+      position: relative;
+      width: 300px;
+      height: 450px;
+      border-radius: 20px;
+      border: 8px solid var(--violet);
+      box-shadow: -5px -5px 15px rgba($color: #fff, $alpha: 0.1),
+      5px 5px 15px rgba($color: #b145e9, $alpha: 1.0),
+      inset -5px -5px 15px rgba($color: #fff, $alpha: 0.1),
+      inset 5px 5px 15px rgba($color: #b145e9, $alpha: 1.0);
+
+      .box{
+
+
+        h3{
+          color: #fff;
+          font-size: 1.35em;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.12em;
+          margin: 40px 0 20px;
+          text-align: center;
+          padding:0 20px;
+        }
+        
+
+        .content{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          padding: 20px;
+          // text-align: center;
+
+
+          p{
+            color: #fff;
+            font-size: 1em;
+            opacity: .75;
+            margin: 20px 0;
+
+            strong{
+              opacity: 1;
+              font-weight: 700;
+            }
+          }
+
+          a{
+            background: var(--violet);
+            display: inline-block;
+            padding: 10px 25px;
+            margin-top: 40px;
+            border: none;
+            color: #333;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: .5s;
+
+            &:hover{
+              letter-spacing: 0.2em;
+            }
+          }
+        }
+      }
+    }
+
+  }
 }

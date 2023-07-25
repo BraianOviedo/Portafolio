@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from '../layout/layout.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -22,7 +23,8 @@ import { LayoutModule } from '../layout/layout.module';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    LayoutModule
+    LayoutModule,
+    RouterModule,
   ],
   exports: [
     HomeComponent,
