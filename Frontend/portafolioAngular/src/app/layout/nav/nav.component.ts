@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class NavComponent implements OnInit{
   
   enableToggle:boolean = false;
+  isAuth:boolean=false;
 
   constructor(
     private renderer: Renderer2, 
@@ -27,7 +28,11 @@ export class NavComponent implements OnInit{
         this.activeLink(item);
       })
     );
+
+    this.authService.isAuthenticate.subscribe(res=>( this.isAuth=res));
+
   }
+
 
   activeLink(selectedItem: HTMLElement) {
     const menuItems = this.el.nativeElement.querySelectorAll('.menu-list li');
@@ -49,6 +54,7 @@ export class NavComponent implements OnInit{
         // Handle successful logout
         localStorage.removeItem('jwtToken'); // Remove the token from local storage
         this.router.navigateByUrl('/');
+        this.isAuth = false;
         // Optionally, you can navigate to the login page or any other page after successful logout
       },
       (error) => {

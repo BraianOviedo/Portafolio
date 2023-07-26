@@ -18,17 +18,17 @@ export class AuthGuard implements CanActivate {
         _route: ActivatedRouteSnapshot,
         _state: RouterStateSnapshot
     ): Observable<boolean> {
-    return this.authService.estaAutenticado.pipe(
-        take(1),
-        map((isLogged: boolean) => {
-        if (isLogged) {
-            return true;
-        } else {
-            // Redireccionar al componente de inicio de sesión
-            this.router.navigate(['/login']);
-            return false;
-        }
-        })
-    );
+        return this.authService.isAuthenticate.pipe(
+            take(1),
+            map((isLogged: boolean) => {
+                if (isLogged) {
+                    return true;
+                } else {
+                    // Redireccionar al componente de inicio de sesión
+                    this.router.navigate(['/login']);
+                    return false;
+                }
+            })
+        );
     }
 }

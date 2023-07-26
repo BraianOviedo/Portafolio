@@ -13,14 +13,15 @@ import { AccountComponent } from '../auth/account/account.component';
 import { RegisterComponent } from '../auth/register/register.component';
 import { LoginComponent } from '../auth/login/login.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { AuthGuard } from '../services/auth.guard';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'contact', component: ContactComponent},
-  { path: 'dashboard', component: DashboardComponent},
-  { path: 'account', component: AccountComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
+  { path: 'account', component: AccountComponent, canActivate:[AuthGuard] },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent},
   { path: '**', component: HomeComponent }

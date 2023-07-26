@@ -31,7 +31,15 @@ export class AuthService {
   }
 
   login(email: string, password: string): Observable<any> {
-    return this.http.post<any>(this.baseUrl + 'login/', { email, password });
+    return this.http.post<any>(this.baseUrl + 'login/', { email, password })
+      .pipe(map(data => {
+        localStorage.setItem('currentUser', JSON.stringify(data));
+        this.currentUserSubject.next(data);
+        this.loggedIn.next(true);
+        console.log(data);
+    
+        return data;
+      }));
   }
 
   // login(user: User): Observable<User> {
@@ -54,11 +62,11 @@ export class AuthService {
     return this.http.post<any>(this.baseUrl + 'logout/', {});
   }
 
-  get UserAuth(): User {
+  get UserAuthenticate(): User {
     return this.currentUserSubject.value;
   }
 
-  get estaAutenticado(): Observable<boolean> {
+  get isAuthenticate(): Observable<boolean> {
     return this.loggedIn.asObservable();
   }
 }
