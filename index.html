@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Braian M. Oviedo - Portafolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#stack">Stack Tecnológico</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#certificados">Certificados</a></li>
+                <li><a href="#contacto">Medios de Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección de Stack Tecnológico -->
+        <section id="stack">
+            <h2>Stack Tecnológico</h2>
+            <div class="box languages">
+                <h3>Lenguajes</h3>
+                <ul class="tecnologias">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Sass</li>
+                    <li>JavaScript</li>
+                    <li>TypeScript</li>
+                    <li>Python</li>
+                    <li>MySQLite</li>
+                    <li>Java</li>
+                    <li>Kotlin</li>
+                </ul>
+            </div>
+            <div class="box frameworks">
+                <h3>Frameworks</h3>
+                <ul class="tecnologias">
+                    <li>Django</li>
+                    <li>Angular</li>
+                </ul>
+            </div>
+            <div class="box tech">
+                <h3>Otras Tecnologías</h3>
+                <ul class="tecnologias">
+                    <li>WordPress</li>
+                    <li>Firebase</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección de Proyectos -->
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+            <div class="proyecto">
+                <h3>Gardening Friend - Web</h3>
+                <a href="#" class="preview button" data-project="gardeningWeb">Preview</a>
+                <p>
+                    Gardening Friend es una aplicación que cuenta con una versión web y móvil. 
+                    El propósito de nuestro proyecto a quienes buscan iniciarse en el mundo de los cultivos y 
+                    la jardinería orgánica pero no tienen los conocimientos necesarios. 
+                    Nuestro proyecto es el perfecto punto de partida, ya que proveemos información y 
+                    recursos fáciles de comprender. </p>
+                <a href="https://github.com/GardeningFriendTeam/GardeningFriendWeb" target="_blank">Ver en GitHub</a>
+            </div>
+            <div class="proyecto">
+                <h3>Gardening Friend - App</h3>
+                <a href="#" class="preview button" data-project="gardeningApp">Preview</a>
+                <p>
+                    ¡Bienvenido al repositorio de Gardening Friend, 
+                    la aplicación nativa de Android para entusiastas de la jardinería y la agricultura! 
+                    Esta aplicación se basa en nuestra aplicación web Gardening Friend y 
+                    ofrece información, consejos y tutoriales sobre cultivos y huertos. 
+                    Además, agregaremos emocionantes funcionalidades nuevas para brindarte una experiencia completa y 
+                    conveniente en tu dispositivo móvil.
+                </p>
+                <a href="https://github.com/usuario/proyecto2" target="_blank">Ver en GitHub</a>
+            </div>
+            <div class="proyecto">
+                <h3>ArtMaster</h3>
+                <a href="#" class="preview button" data-project="artMaster">Preview</a>
+                <p>
+                    La app brinda una forma sencilla y 
+                    amigable de aprender dibujo realista para aquellos quienes 
+                    buscan iniciarse en esta rama del arte. 
+                    Podrás seguir distintas rutas de aprendizaje dependiendo de tu objetivo.
+                </p>
+                <a href="https://github.com/usuario/proyecto2" target="_blank">Ver en GitHub</a>
+            </div>
+            <div class="proyecto">
+                <h3>OdinAI</h3>
+                <a href="#" class="preview button" data-project="odinAI">Preview</a>
+                <p>
+                    Este proyecto es una app web desarrollada en Angular que brinda el servicio de un chatbot 
+                    basado en uno de los LLMs provistos por Groq. 
+                    Permite realizar cualquier tipo de consulta en forma de texto y 
+                    guardar las respuestas en colecciones que el mismo usuario puede crear. 
+                    También se incorporan otras funcionalidades como reconocimiento visual para 
+                    manejar las colecciones de una forma mas interactiva e innovadora.
+                </p>
+                <a href="https://github.com/usuario/proyecto2" target="_blank">Ver en GitHub</a>
+            </div>
+            <div class="proyecto">
+                <h3>CreArte [En Proceso]</h3>
+                <a href="#" class="preview button" data-project="odinAI">Preview</a>
+                <p>
+                    Esta app es una red social especializada para artistas visuales, 
+                    a diferencia de otras plataformas esta app incentiva 
+                    la creación de contenido de calidad por lo que tu trabajo si 
+                    será realmente apreciado y bienvenido aquí! 
+                </p>
+                <a href="https://github.com/usuario/proyecto2" target="_blank">Ver en GitHub</a>
+            </div>
+            <div class="proyecto">
+                <h3>DAILO [En Proceso]</h3>
+                <a href="#" class="preview button" data-project="odinAI">Preview</a>
+                <p>
+                    App Android para la gestión de rutinas.
+                </p>
+                <a href="https://github.com/usuario/proyecto2" target="_blank">Ver en GitHub</a>
+            </div>
+            <div class="proyecto">
+                <h3>AppiStock [En Proceso]</h3>
+                <a href="#" class="preview button" data-project="odinAI">Preview</a>
+                <p>
+                    Web destinada a la gestión del comercio
+                </p>
+                <a href="https://github.com/usuario/proyecto2" target="_blank">Ver en GitHub</a>
+            </div>
+        </section>
+
+        <!-- Modal de Carrusel -->
+        <div id="modal-slider" class="modal">
+            <div class="modal-content">
+                <span class="close-slider">&times;</span>
+                <div class="slider">
+                    <button class="prev">&#10094;</button>
+                    <div class="slides">
+                        <img src="" alt="Imagen del proyecto" class="slide-img">
+                    </div>
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Certificados -->
+        <section id="certificados">
+            <h2>Certificados</h2>
+            <ul class="certificados-list">
+                <li><a href="#" class="certificado" data-cert="certificado1.jpg">
+                    Desarrollador Full Stack Junior
+                </a></li>
+                <li><a href="#" class="certificado" data-cert="certificado2.jpg">
+                    Programador
+                </a></li>
+                <li><a href="#" class="certificado" data-cert="certificado3.jpg">
+                    Programming Essentials in Python
+                </a></li>
+                <li><a href="#" class="certificado" data-cert="certificado4.jpg">
+                    Programador de Dispositivos Móviles
+                </a></li>
+                <li><a href="#" class="certificado" data-cert="certificado5.jpg">
+                    Programador Web
+                </a></li>
+            </ul>
+        </section>
+
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img id="modal-img" src="" alt="Certificado">
+            </div>
+        </div>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto">
+            <h2>Medios de Contacto</h2>
+            <ul class="contacto-list">
+                <li>Email: <a href="mailto:braianoviedo2141@gmail.com">braianoviedo2141@gmail.com</a></li>
+                <li>LinkedIn: <a href="https://linkedin.com/in/braian-m-oviedo" target="_blank">linkedin.com/in/braian-m-oviedo</a></li>
+                <li>GitHub: <a href="https://github.com/BraianOviedo" target="_blank">github.com/BraianOviedo</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Braian Maximiliano Oviedo - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="js/model.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+</html>

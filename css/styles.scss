@@ -1,0 +1,334 @@
+// Variables
+$primary-color: #2e294e;
+$secondary-color: #6b529e;
+$background-color: #001021;
+$text-color: #FAFAFF;
+$font-family: 'Arial', sans-serif;
+
+// Reset básico
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    color: $text-color;
+    background-color: $background-color;
+    line-height: 1.6;
+}
+
+/* Asegurarse de que las imágenes se adapten al contenido */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Esta propiedad asegura que la imagen cubra el área asignada sin deformarse */
+}
+
+
+// Header y navegación
+header {
+    background-color: $primary-color;
+    padding: 1rem 0;
+    text-align: center;
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+
+        li {
+            a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+}
+
+// Secciones principales
+main {
+    padding: 2rem;
+
+    section {
+        margin-bottom: 4rem;
+
+        h2 {
+            color: $secondary-color;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+    }
+
+    // Stack Tecnológico
+    #stack {
+        .box {
+            position: relative;
+            border: 4px solid $primary-color;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem auto;
+            width: 90%;         
+            max-width: 1200px;  
+            min-width: 300px;    
+    
+            h3 {
+                position: absolute;
+                top: -1rem;
+                left: 1.5rem;
+                background-color: $primary-color;
+                padding: 0 1rem;
+                color: $text-color;
+                font-weight: bold;
+            }
+        
+            // Estilo de la lista de tecnologías
+            .tecnologias {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                list-style: none;
+                gap: 1rem;
+                padding: 0;
+                margin-top: 1.5rem; // Separación con el título
+        
+                li {
+                    background-color: $secondary-color;
+                    color: white;
+                    padding: 0.5rem 1rem;
+                    border-radius: 4px;
+                    font-weight: bold;
+                    transition: background-color 0.3s;
+            
+                    &:hover {
+                        background-color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+
+    // Proyectos
+    #proyectos {
+        .proyecto {
+            position: relative;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+
+            h3 {
+                color: $primary-color;
+                margin-bottom: 0.5rem;
+            }
+
+            .preview {
+                position: absolute;
+                bottom: 1rem;
+                right: 1.5rem;
+                padding: 8px 16px;
+                background-color: $secondary-color;
+                border: 1px solid $primary-color;
+                border-radius: 10px;
+                text-decoration: none;
+                color: $text-color;
+                transition: .3s all;
+
+                &:hover {
+                    background-color: $primary-color;
+                    text-decoration: none;
+                }
+            }
+
+            p {
+                margin-bottom: 1rem;
+                color: #7f8c8d;
+            }
+
+            a {
+                color: $secondary-color;
+                text-decoration: none;
+                font-weight: bold;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+            background-color: #fff;
+            border-radius: 10px;
+
+            img {
+                width: 100%;
+                border-radius: 8px;
+            }
+
+            .close-slider {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+                cursor: pointer;
+                color: #333;
+                &:hover {
+                    color: red;
+                }
+            }
+            .slider {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .slides {
+                    flex-grow: 1;
+                    img {
+                        width: 100%;
+                        border-radius: 8px;
+                    }
+                }
+                button {
+                    background-color: transparent;
+                    border: none;
+                    font-size: 30px;
+                    cursor: pointer;
+                    &:hover {
+                        color: #555;
+                    }
+                }
+            }
+        }
+    }
+    
+
+    // Certificados
+    #certificados {
+        .certificados-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            li {
+                background-color: $secondary-color;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                font-weight: bold;
+                transition: .3s all;
+
+                & a {
+                    text-decoration: none;
+                    color: $text-color;
+                }
+
+                &:hover {
+                    background-color: $primary-color;
+                }
+            }
+        }
+    }
+
+    // Modal
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+
+        .modal-content {
+            position: relative;
+            margin: 10% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            background-color: $text-color;
+            border-radius: 10px;
+
+            img {
+                width: 100%;
+                border-radius: 8px;
+            }
+
+            .close {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+                font-weight: bold;
+                cursor: pointer;
+                color: #333;
+
+                &:hover {
+                    color: red;
+                }
+            }
+        }
+    }
+
+
+    // Contacto
+    #contacto {
+        .contacto-list {
+            list-style: none;
+            text-align: center;
+            gap: 1rem;
+
+            li {
+                a {
+                    color: $secondary-color;
+                    text-decoration: none;
+                    font-weight: bold;
+
+                    &:hover {
+                        text-decoration: underline;
+                        color: darken($secondary-color, 10%);
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+// Footer
+footer {
+    background-color: $primary-color;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+}
