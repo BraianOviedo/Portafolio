@@ -1,9 +1,14 @@
+// Imports
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
 // Variables
 $primary-color: #2e294e;
 $secondary-color: #6b529e;
 $background-color: #001021;
 $text-color: #FAFAFF;
-$font-family: 'Arial', sans-serif;
+$font-family: "Noto Serif", sans-serif;
+$title-font: "Bebas Neue", sans-serif;
 
 // Basic reset
 * {
@@ -58,6 +63,9 @@ main {
             text-align: center;
             margin-bottom: 1.5rem;
             font-size: 2rem;
+            font-family: $title-font;
+            font-weight: 400;
+            font-style: normal;
         }
     }
 
@@ -82,7 +90,9 @@ main {
                 background-color: $primary-color;
                 padding: 0 1rem;
                 color: $text-color;
-                font-weight: bold;
+                font-family: $title-font;
+                font-style: normal;
+                font-weight: 400;
             }
         
             // Style of the tech list
@@ -125,6 +135,10 @@ main {
             h3 {
                 color: $primary-color;
                 margin-bottom: 0.5rem;
+                font-size: 24px;
+                font-family: $title-font;
+                font-style: normal;
+                font-weight: 400;
             }
 
             .preview {
@@ -340,7 +354,10 @@ footer {
     bottom: 5rem;
     right: 1rem;
     z-index: 99;
-    font-size: 16px;
+    font-size: 24px;
+    font-family: $title-font;
+    font-style: normal;
+    font-weight: 400;
     border: none;
     outline: none;
     background-color: $secondary-color;

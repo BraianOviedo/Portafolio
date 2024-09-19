@@ -11,8 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let projectImages = {
         gardeningWeb: [
             'img/gardeningWeb1.jpg',
-            'img/gardeningWeb2.jpg',
-            'img/gardeningWeb3.jpg'
         ],
         gardeningApp: [
             'img/gardeningApp1.jpg',
@@ -22,23 +20,37 @@ document.addEventListener('DOMContentLoaded', function () {
         artMaster: [
             'img/artMaster1.jpg',
             'img/artMaster2.jpg',
-            'img/artMaster3.jpg'
+            'img/artMaster3.jpg',
+            'img/artMaster4.jpg',
+            'img/artMaster5.jpg'
         ],
         odinAI: [
             'img/odinAI1.jpg',
-            'img/odinAI2.jpg'
+            'img/odinAI2.jpg',
+            'img/odinAI3.jpg'
+        ],
+        creArte: [
+            'img/creArte1.jpg'
+        ],
+        dailo: [
+            'img/dailo1.jpg'
+        ],
+        dailo: [
+            'img/appiStock1.jpg'
         ],
     };
 
     // Abrir modal de slider al hacer clic en un botón de Preview
     previewButtons.forEach(button => {
-        button.addEventListener('click', function () {
+        button.addEventListener('click', function (e) {
+            e.preventDefault();  // Prevenir el comportamiento por defecto
             currentProject = button.getAttribute('data-project');
             currentSlideIndex = 0;
             loadSlide();
             modalSlider.style.display = 'block';
         });
     });
+
 
     // Cerrar modal de slider
     closeSlider.addEventListener('click', function () {
