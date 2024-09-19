@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dailo: [
             'img/dailo1.jpg'
         ],
-        dailo: [
+        appiStock: [
             'img/appiStock1.png'
         ],
     };
