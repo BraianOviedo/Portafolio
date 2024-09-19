@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
             'img/artMaster5.jpg'
         ],
         odinAI: [
-            'img/odinAI1.jpg',
-            'img/odinAI2.jpg',
-            'img/odinAI3.jpg'
+            'img/odinAI1.png',
+            'img/odinAI2.png',
+            'img/odinAI3.png'
         ],
         creArte: [
             'img/creArte1.jpg'
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'img/dailo1.jpg'
         ],
         dailo: [
-            'img/appiStock1.jpg'
+            'img/appiStock1.png'
         ],
     };
 
