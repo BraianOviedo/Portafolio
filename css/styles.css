@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -12,15 +11,6 @@ body {
   line-height: 1.6;
 }
 
-/* Asegurarse de que las imágenes se adapten al contenido */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  -o-object-fit: cover;
-     object-fit: cover; /* Esta propiedad asegura que la imagen cubra el área asignada sin deformarse */
-}
-
 header {
   background-color: #2e294e;
   padding: 1rem 0;
@@ -30,11 +20,12 @@ header nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   gap: 2rem;
 }
 header nav ul li a {
   text-decoration: none;
-  color: white;
+  color: #FAFAFF;
   font-weight: bold;
 }
 header nav ul li a:hover {
@@ -132,30 +123,28 @@ main #proyectos .proyecto a {
 main #proyectos .proyecto a:hover {
   text-decoration: underline;
 }
-main .modal {
+main #modal-slider {
   display: none;
   position: fixed;
   z-index: 1000;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
 }
-main .modal .modal-content {
+main #modal-slider .modal-content {
   position: relative;
   margin: auto;
+  top: 10%;
   padding: 20px;
   width: 80%;
   max-width: 700px;
   background-color: #fff;
   border-radius: 10px;
+  overflow: hidden;
 }
-main .modal .modal-content img {
-  width: 100%;
-  border-radius: 8px;
-}
-main .modal .modal-content .close-slider {
+main #modal-slider .modal-content .close-slider {
   position: absolute;
   top: 10px;
   right: 20px;
@@ -163,28 +152,32 @@ main .modal .modal-content .close-slider {
   cursor: pointer;
   color: #333;
 }
-main .modal .modal-content .close-slider:hover {
-  color: red;
-}
-main .modal .modal-content .slider {
+main #modal-slider .slider {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-main .modal .modal-content .slider .slides {
+main #modal-slider .slider .slides {
   flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-main .modal .modal-content .slider .slides img {
-  width: 100%;
+main #modal-slider .slider .slides img {
+  max-width: 100%;
+  max-height: 80vh;
+  -o-object-fit: contain;
+     object-fit: contain;
   border-radius: 8px;
 }
-main .modal .modal-content .slider button {
+main #modal-slider .slider button {
   background-color: transparent;
   border: none;
   font-size: 30px;
   cursor: pointer;
+  color: #333;
 }
-main .modal .modal-content .slider button:hover {
+main #modal-slider .slider button:hover {
   color: #555;
 }
 main #certificados .certificados-list {
@@ -208,7 +201,7 @@ main #certificados .certificados-list li a {
 main #certificados .certificados-list li:hover {
   background-color: #2e294e;
 }
-main .modal {
+main #modal {
   display: none;
   position: fixed;
   z-index: 1000;
@@ -218,7 +211,7 @@ main .modal {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
 }
-main .modal .modal-content {
+main #modal .modal-content {
   position: relative;
   margin: 10% auto;
   padding: 20px;
@@ -227,11 +220,11 @@ main .modal .modal-content {
   background-color: #FAFAFF;
   border-radius: 10px;
 }
-main .modal .modal-content img {
+main #modal .modal-content img {
   width: 100%;
   border-radius: 8px;
 }
-main .modal .modal-content .close {
+main #modal .modal-content .close {
   position: absolute;
   top: 10px;
   right: 20px;
@@ -240,7 +233,7 @@ main .modal .modal-content .close {
   cursor: pointer;
   color: #333;
 }
-main .modal .modal-content .close:hover {
+main #modal .modal-content .close:hover {
   color: red;
 }
 main #contacto .contacto-list {
@@ -267,4 +260,33 @@ footer {
   bottom: 0;
   width: 100%;
   font-size: 0.9rem;
+}
+
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 5rem;
+  right: 1rem;
+  z-index: 99;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: #6b529e;
+  color: white;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 24px;
+  transition: background-color 0.3s;
+}
+#scrollTopBtn:hover {
+  background-color: #2e294e;
+}
+
+@media only screen and (min-width: 1200px) {
+  header nav ul {
+    flex-direction: row;
+  }
+  #modal-slider.modal-content {
+    top: -10%;
+  }
 }/*# sourceMappingURL=styles.css.map */
