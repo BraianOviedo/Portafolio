@@ -14,7 +14,6 @@
                 <li><a href="#stack">Stack Tecnológico</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#certificados">Certificados</a></li>
-                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -69,7 +68,7 @@
                 <p>
                     Stack [HTML, CSS, TypeScript, Python, MySQL, Angular, Django]
                 </p>
-                <a href="https://github.com/GardeningFriendTeam/GardeningFriendWeb" target="_blank">Ver en GitHub</a>
+                <a href="https://github.com/GardeningFriendTeam/GardeningFriendWeb" class="goTo" target="_blank">Ver en GitHub</a>
             </div>
             <div class="proyecto">
                 <h3>Gardening Friend - App</h3>
@@ -83,7 +82,7 @@
                 <p>
                     Stack [Java, JavaXML, Firebase]
                 </p>
-                <a href="https://github.com/GardeningFriendTeam/GardeningFriendApp" target="_blank">Ver en GitHub</a>
+                <a href="https://github.com/GardeningFriendTeam/GardeningFriendApp" class="goTo" target="_blank">Ver en GitHub</a>
             </div>
             <div class="proyecto">
                 <h3>ArtMaster</h3>
@@ -97,7 +96,7 @@
                 <p>
                     Stack [Kotlin, Jetpack Compose, Firebase]
                 </p>
-                <a href="https://github.com/BraianOviedo/ArtMaster" target="_blank">Ver en GitHub</a>
+                <a href="https://github.com/BraianOviedo/ArtMaster" class="goTo" target="_blank">Ver en GitHub</a>
             </div>
             <div class="proyecto">
                 <h3>OdinAI</h3>
@@ -111,7 +110,7 @@
                 <p>
                     Stack [HTML, Sass, TypeScript, Angular, Firebase]
                 </p>
-                <a href="https://github.com/BraianOviedo/OdinAI" target="_blank">Ver en GitHub</a>
+                <a href="https://github.com/BraianOviedo/OdinAI" class="goTo" target="_blank">Ver en GitHub</a>
             </div>
             <div class="proyecto">
                 <h3>CreArte [En Proceso]</h3>
@@ -126,7 +125,7 @@
                 <p>
                     Stack [Kotlin, Jetpack Compose, Firebase]
                 </p>
-                <a href="https://github.com/maxtheprogrammer98/CreArte" target="_blank">Ver en GitHub</a>
+                <a href="https://github.com/maxtheprogrammer98/CreArte" class="goTo" target="_blank">Ver en GitHub</a>
             </div>
             <div class="proyecto">
                 <h3>DAILO [En Proceso]</h3>
@@ -140,7 +139,7 @@
                 <p>
                     Stack [Kotlin, Jetpack Compose, Firebase]
                 </p>
-                <a href="https://github.com/BraianOviedo/DAILO" target="_blank">Ver en GitHub</a>
+                <a href="https://github.com/BraianOviedo/DAILO" class="goTo" target="_blank">Ver en GitHub</a>
             </div>
             <div class="proyecto">
                 <h3>AppiStock [En Proceso]</h3>
@@ -154,14 +153,14 @@
                 <p>
                     Stack [HTMX, Python, Django, PostgreSQL]
                 </p>
-                <a href="https://github.com/" target="_blank">Ver en GitHub</a>
+                <a href="https://github.com/" class="goTo" target="_blank">Ver en GitHub</a>
             </div>
         </section>
 
         <!-- Modal de Carrusel -->
         <div id="modal-slider" class="modal">
             <div class="modal-content">
-                <span class="close-slider">&times;</span>
+                <span class="close-slider">X</span>
                 <div class="slider">
                     <button class="prev">&#10094;</button>
                     <div class="slides">
@@ -197,19 +196,30 @@
         <!-- Modal -->
         <div id="modal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span class="close">X</span>
                 <img id="modal-img" src="" alt="Certificado">
             </div>
         </div>
 
         <!-- Sección de Contacto -->
         <section id="contacto">
-            <h2>Contacto</h2>
-            <ul class="contacto-list">
-                <li>Email: <a href="mailto:braianoviedo2141@gmail.com">braianoviedo2141@gmail.com</a></li>
-                <li>LinkedIn: <a href="https://linkedin.com/in/braian-m-oviedo" target="_blank">linkedin.com/in/braian-m-oviedo</a></li>
-                <li>GitHub: <a href="https://github.com/BraianOviedo" target="_blank">github.com/BraianOviedo</a></li>
-            </ul>
+            <a href="https://github.com/BraianOviedo" target="_blank" class="socialContainer containerOne">
+                <svg class="socialSvg githubSvg" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.13 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+            </a>
+                
+            <a href="https://linkedin.com/in/braian-m-oviedo" target="_blank" class="socialContainer containerTwo">
+                <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512">
+                    <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                </svg>
+            </a>
+            
+            <a href="mailto:braianoviedo2141@gmail.com" class="socialContainer containerThree">
+                <svg class="socialSvg emailSvg" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 4a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H2a2 2 0 01-2-2V4zm2-.5v.217l6 3.75 6-3.75V3.5H2zm12 1.683l-5.813 3.633a1 1 0 01-1.074 0L2 5.183V12h12V5.183z"/>
+                </svg>
+            </a>
         </section>
     </main>
 
@@ -217,8 +227,12 @@
         <p>&copy; 2024 Braian Maximiliano Oviedo - Todos los derechos reservados</p>
     </footer>
 
-    <button id="scrollTopBtn" title="Volver arriba">UP</button>
-
+    <button id="scrollTopBtn" title="Volver arriba">
+        <svg class="socialSvg arrowUpSvg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4L12 20M12 4L5 11M12 4L19 11" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+    
     <script src="js/script.js"></script>
     <script src="js/model.js"></script>
     <script src="js/slider.js"></script>

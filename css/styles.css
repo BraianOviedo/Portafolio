@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
 * {
@@ -29,13 +30,28 @@ header nav ul li a {
   text-decoration: none;
   color: #FAFAFF;
   font-weight: bold;
+  position: relative;
+  line-height: 2;
 }
-header nav ul li a:hover {
-  color: #6b529e;
+header nav ul li a::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #FAFAFF;
+  position: absolute;
+  bottom: -0.25rem;
+  right: 0;
+  transition: right 0.4s, width 0.4s, left 0.4s;
+}
+header nav ul li a:hover::before {
+  width: 100%;
+  left: 0;
 }
 
 main {
   padding: 2rem;
+  /* Contacto */
 }
 main section {
   margin-bottom: 4rem;
@@ -48,6 +64,7 @@ main section h2 {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   font-style: normal;
+  text-shadow: 4px 4px 5px #2e294e;
 }
 main #stack .box {
   position: relative;
@@ -56,6 +73,7 @@ main #stack .box {
   padding: 2rem;
   margin: 2rem auto;
   width: 90%;
+  box-shadow: 9px 9px 5px #6b529e, -4px -4px 8px #2e294e;
   max-width: 1200px;
   min-width: 300px;
 }
@@ -80,21 +98,24 @@ main #stack .box .tecnologias {
   margin-top: 1.5rem;
 }
 main #stack .box .tecnologias li {
-  background-color: #6b529e;
-  color: white;
+  color: #FAFAFF;
   padding: 0.5rem 1rem;
   border-radius: 4px;
+  background: linear-gradient(315deg, #6b529e, #2e294e);
+  box-shadow: -4px -4px 2px #2e294e, 4px 4px 2px #6b529e;
   font-weight: bold;
-  transition: background-color 0.3s;
+  transition: 0.3s;
 }
 main #stack .box .tecnologias li:hover {
-  background-color: #2e294e;
+  background: linear-gradient(315deg, #2e294e, #6b529e);
+  box-shadow: -4px -4px 2px #6b529e, 4px 4px 2px #2e294e;
 }
 main #proyectos .proyecto {
   position: relative;
   background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  background: #e0e0e0;
+  box-shadow: 9px 9px 5px #6b529e, -8px -8px 8px #2e294e;
   padding: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -111,28 +132,48 @@ main #proyectos .proyecto .preview {
   bottom: 1rem;
   right: 1.5rem;
   padding: 8px 16px;
-  background-color: #6b529e;
-  border: 1px solid #2e294e;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #FAFAFF;
-  transition: 0.3s all;
+  border: 3px solid #6b529e;
+  border-radius: 20px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  font-size: 1em;
+  font-weight: 550;
+  color: #6b529e;
 }
 main #proyectos .proyecto .preview:hover {
-  background-color: #2e294e;
-  text-decoration: none;
+  background: #6b529e;
+  color: #FAFAFF;
+  font-size: 1.1em;
 }
 main #proyectos .proyecto p {
   margin-bottom: 1rem;
-  color: #7f8c8d;
+  color: #696e6e;
 }
 main #proyectos .proyecto a {
+  text-decoration: none;
+}
+main #proyectos .proyecto .goTo {
   color: #6b529e;
   text-decoration: none;
   font-weight: bold;
+  position: relative;
+  line-height: 2;
 }
-main #proyectos .proyecto a:hover {
-  text-decoration: underline;
+main #proyectos .proyecto .goTo::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #6b529e;
+  position: absolute;
+  bottom: -0.25rem;
+  right: 0;
+  transition: right 0.4s, width 0.4s, left 0.4s;
+}
+main #proyectos .proyecto .goTo:hover::before {
+  width: 100%;
+  left: 0;
 }
 main #modal-slider {
   display: none;
@@ -156,12 +197,24 @@ main #modal-slider .modal-content {
   overflow: hidden;
 }
 main #modal-slider .modal-content .close-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
   position: absolute;
+  right: 10px;
   top: 10px;
-  right: 20px;
-  font-size: 30px;
+  color: rgb(226, 94, 54);
+  font-weight: bold;
   cursor: pointer;
-  color: #333;
+  transition: 0.3s;
+}
+main #modal-slider .modal-content .close-slider:hover {
+  background-color: rgb(226, 94, 54);
+  color: #FAFAFF;
 }
 main #modal-slider .slider {
   display: flex;
@@ -186,10 +239,10 @@ main #modal-slider .slider button {
   border: none;
   font-size: 30px;
   cursor: pointer;
-  color: #333;
+  color: #6b529e;
 }
 main #modal-slider .slider button:hover {
-  color: #555;
+  color: #2e294e;
 }
 main #certificados .certificados-list {
   list-style: none;
@@ -201,7 +254,9 @@ main #certificados .certificados-list {
 main #certificados .certificados-list li {
   background-color: #6b529e;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border-radius: 8px;
+  background: #6b529e;
+  box-shadow: 9px 9px 5px #2e294e;
   font-weight: bold;
   transition: 0.3s all;
 }
@@ -211,6 +266,7 @@ main #certificados .certificados-list li a {
 }
 main #certificados .certificados-list li:hover {
   background-color: #2e294e;
+  box-shadow: 0px 0px 0px #6b529e;
 }
 main #modal {
   display: none;
@@ -236,30 +292,75 @@ main #modal .modal-content img {
   border-radius: 8px;
 }
 main #modal .modal-content .close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
   position: absolute;
+  right: 10px;
   top: 10px;
-  right: 20px;
-  font-size: 30px;
+  color: rgb(226, 94, 54);
   font-weight: bold;
   cursor: pointer;
-  color: #333;
+  transition: 0.3s;
 }
 main #modal .modal-content .close:hover {
-  color: red;
+  background-color: rgb(226, 94, 54);
+  color: #FAFAFF;
 }
-main #contacto .contacto-list {
-  list-style: none;
-  text-align: center;
-  gap: 1rem;
+main #contacto {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* Estilos para todos los contenedores sociales */
+  /* Estilos hover para los íconos */
 }
-main #contacto .contacto-list li a {
-  color: #6b529e;
-  text-decoration: none;
-  font-weight: bold;
+main #contacto .socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  border-radius: 50%;
 }
-main #contacto .contacto-list li a:hover {
-  text-decoration: underline;
-  color: #54417c;
+main #contacto .containerOne:hover {
+  background-color: #d64c29;
+  transition-duration: 0.3s;
+}
+main #contacto .containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: 0.3s;
+}
+main #contacto .containerThree:hover {
+  background-color: #7600b1;
+  transition-duration: 0.3s;
+}
+main #contacto .containerFour:hover {
+  background-color: #128C7E;
+  transition-duration: 0.3s;
+}
+main #contacto .socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
+}
+main #contacto .socialSvg {
+  width: 17px;
+}
+main #contacto .socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+main #contacto .socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
 }
 
 footer {
@@ -279,23 +380,45 @@ footer {
   bottom: 5rem;
   right: 1rem;
   z-index: 99;
-  font-size: 24px;
-  font-family: "Bebas Neue", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  border: none;
-  outline: none;
-  background-color: #6b529e;
-  color: white;
-  cursor: pointer;
-  padding: 8px 16px;
-  border-radius: 24px;
-  transition: background-color 0.3s;
+  width: 42px;
+  height: 42px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  border-radius: 50%;
+}
+#scrollTopBtn svg {
+  width: 18px;
+  height: 18px;
+}
+#scrollTopBtn svg path {
+  fill: rgb(255, 255, 255);
 }
 #scrollTopBtn:hover {
-  background-color: #2e294e;
+  background-color: #6b529e;
+  transition-duration: 0.3s;
+}
+#scrollTopBtn:hover svg {
+  animation: slide-in-top 0.3s both;
+}
+#scrollTopBtn:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
 }
 
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @media only screen and (min-width: 1200px) {
   header nav ul {
     flex-direction: row;

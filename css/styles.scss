@@ -42,9 +42,24 @@ header {
                 text-decoration: none;
                 color: $text-color;
                 font-weight: bold;
+                position: relative;
+                line-height: 2;
 
-                &:hover {
-                    color: $secondary-color;
+                &::before {
+                    content: '';
+                    width: 0;
+                    height: 2px;
+                    border-radius: 2px;
+                    background-color: $text-color;
+                    position: absolute;
+                    bottom: -.25rem;
+                    right: 0;
+                    transition: right .4s, width .4s, left .4s;
+                }
+                
+                &:hover::before {
+                    width: 100%;
+                    left: 0;
                 }
             }
         }
@@ -66,6 +81,7 @@ main {
             font-family: $title-font;
             font-weight: 400;
             font-style: normal;
+            text-shadow: 4px 4px 5px $primary-color;
         }
     }
 
@@ -80,6 +96,8 @@ main {
             padding: 2rem;
             margin: 2rem auto;
             width: 90%;         
+            box-shadow: 9px 9px 5px $secondary-color,
+            -4px -4px 8px $primary-color;
             max-width: 1200px;  
             min-width: 300px;    
     
@@ -106,15 +124,19 @@ main {
                 margin-top: 1.5rem;
         
                 li {
-                    background-color: $secondary-color;
-                    color: white;
+                    color: $text-color;
                     padding: 0.5rem 1rem;
                     border-radius: 4px;
+                    background: linear-gradient(315deg, $secondary-color, $primary-color);
+                    box-shadow:  -4px -4px 2px $primary-color,
+                    4px 4px 2px $secondary-color;
                     font-weight: bold;
-                    transition: background-color 0.3s;
+                    transition: 0.3s;
             
                     &:hover {
-                        background-color: $primary-color;
+                        background: linear-gradient(315deg, $primary-color, $secondary-color);
+                        box-shadow:  -4px -4px 2px $secondary-color,
+                        4px 4px 2px $primary-color;
                     }
                 }
             }
@@ -127,8 +149,10 @@ main {
         .proyecto {
             position: relative;
             background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            background: #e0e0e0;
+            box-shadow: 9px 9px 5px $secondary-color,
+            -8px -8px 8px $primary-color;
             padding: 1.5rem;
             margin-bottom: 2rem;
 
@@ -146,31 +170,53 @@ main {
                 bottom: 1rem;
                 right: 1.5rem;
                 padding: 8px 16px;
-                background-color: $secondary-color;
-                border: 1px solid $primary-color;
-                border-radius: 10px;
-                text-decoration: none;
-                color: $text-color;
-                transition: .3s all;
+                border: 3px solid $secondary-color;
+                border-radius: 20px;
+                transition: all 0.3s;
+                cursor: pointer;
+                background: white;
+                font-size: 1em;
+                font-weight: 550;
+                color: $secondary-color;
 
                 &:hover {
-                    background-color: $primary-color;
-                    text-decoration: none;
+                    background: $secondary-color;
+                    color: $text-color;
+                    font-size: 1.1em;
                 }
             }
 
             p {
                 margin-bottom: 1rem;
-                color: #7f8c8d;
+                color: #696e6e;
             }
 
             a {
+                text-decoration: none;
+            }
+
+            .goTo {
                 color: $secondary-color;
                 text-decoration: none;
                 font-weight: bold;
+                position: relative;
+                line-height: 2;
 
-                &:hover {
-                    text-decoration: underline;
+                &::before {
+                    content: '';
+                    width: 0;
+                    height: 2px;
+                    border-radius: 2px;
+                    background-color: $secondary-color;
+                    position: absolute;
+                    bottom: -.25rem;
+                    right: 0;
+                    transition: right .4s, width .4s, left .4s;
+                }
+                
+                &:hover::before {
+                    width: 100%;
+                    left: 0;
                 }
             }
         }
@@ -199,12 +245,25 @@ main {
             overflow: hidden; 
             
             & .close-slider {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: white;
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
                 position: absolute;
+                right: 10px;
                 top: 10px;
-                right: 20px;
-                font-size: 30px;
+                color: rgb(226, 94, 54);
+                font-weight: bold;
                 cursor: pointer;
-                color: #333;
+                transition: .3s;
+
+                &:hover {
+                    background-color: rgb(226, 94, 54);
+                    color: $text-color;
+                }
             }
         }
     
@@ -232,10 +291,10 @@ main {
                 border: none;
                 font-size: 30px;
                 cursor: pointer;
-                color: #333;
+                color: $secondary-color;
                 
                 &:hover {
-                    color: #555;
+                    color: $primary-color;
                 }
             }
         }
@@ -254,7 +313,9 @@ main {
             li {
                 background-color: $secondary-color;
                 padding: 0.5rem 1rem;
-                border-radius: 4px;
+                border-radius: 8px;
+                background: $secondary-color;
+                box-shadow: 9px 9px 5px $primary-color;
                 font-weight: bold;
                 transition: .3s all;
 
@@ -265,6 +326,7 @@ main {
 
                 &:hover {
                     background-color: $primary-color;
+                    box-shadow: 0px 0px 0px $secondary-color;
                 }
             }
         }
@@ -296,43 +358,94 @@ main {
             }
 
             .close {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: white;
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
                 position: absolute;
+                right: 10px;
                 top: 10px;
-                right: 20px;
-                font-size: 30px;
+                color: rgb(226, 94, 54);
                 font-weight: bold;
                 cursor: pointer;
-                color: #333;
+                transition: .3s;
 
                 &:hover {
-                    color: red;
+                    background-color: rgb(226, 94, 54);
+                    color: $text-color;
                 }
             }
         }
     }
 
 
-    // Contact
+    /* Contacto */
     #contacto {
-        .contacto-list {
-            list-style: none;
-            text-align: center;
-            gap: 1rem;
+        position: fixed;
+        bottom: 20px; 
+        left: 20px;  
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
 
-            li {
-                a {
-                    color: $secondary-color;
-                    text-decoration: none;
-                    font-weight: bold;
-
-                    &:hover {
-                        text-decoration: underline;
-                        color: darken($secondary-color, 10%);
-                    }
-                }
-            }
+        /* Estilos para todos los contenedores sociales */
+        .socialContainer {
+            width: 52px;
+            height: 52px;
+            background-color: rgb(44, 44, 44);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition-duration: .3s;
+            border-radius: 50%;
         }
+
+        /* Estilos hover para los íconos */
+        .containerOne:hover {
+            background-color: #d64c29;
+            transition-duration: .3s;
+        }
+
+        .containerTwo:hover {
+            background-color: #00acee;
+            transition-duration: .3s;
+        }
+
+        .containerThree:hover {
+            background-color: #7600b1;
+            transition-duration: .3s;
+        }
+
+        .containerFour:hover {
+            background-color: #128C7E;
+            transition-duration: .3s;
+        }
+
+        .socialContainer:active {
+            transform: scale(0.9);
+            transition-duration: .3s;
+        }
+
+        .socialSvg {
+            width: 17px;
+        }
+
+        .socialSvg path {
+            fill: rgb(255, 255, 255);
+        }
+
+        .socialContainer:hover .socialSvg {
+            animation: slide-in-top 0.3s both;
+        }
+
+        
     }
+
 
 }
 
@@ -354,24 +467,53 @@ footer {
     bottom: 5rem;
     right: 1rem;
     z-index: 99;
-    font-size: 24px;
-    font-family: $title-font;
-    font-style: normal;
-    font-weight: 400;
-    border: none;
-    outline: none;
-    background-color: $secondary-color;
-    color: white;
-    cursor: pointer;
-    padding: 8px 16px;
-    border-radius: 24px;
-    transition: background-color 0.3s;
+    width: 42px;
+    height: 42px;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: .3s;
+    border-radius: 50%;
+    
+    & svg {
+        width: 18px;
+        height: 18px;
+
+        & path {
+            fill: rgb(255, 255, 255);
+        }
+    }
     
     &:hover {
-        background-color: $primary-color;
+        background-color: $secondary-color;
+        transition-duration: .3s;
+    }
+
+    &:hover svg {
+        animation: slide-in-top 0.3s both;
+    }
+
+    &:active {
+        transform: scale(0.9);
+        transition-duration: .3s;
     }
 }
 
+
+// ANIMATIONS
+
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 //------------------------- MEDIA QUERIES (notebooks / desktop) ------------------------//
 @media only screen and (min-width: 1200px) {
